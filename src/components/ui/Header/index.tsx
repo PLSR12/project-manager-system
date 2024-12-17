@@ -47,6 +47,8 @@ const Header = () => {
 					{user?.image !== null && (
 						<Image
 							src={user?.image ? user?.image : ""}
+							width={50}
+							height={50}
 							alt="Avatar"
 							className="w-full h-full object-cover"
 						/>
