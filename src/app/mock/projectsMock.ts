@@ -1,4 +1,4 @@
-import { IProject } from "../api/projects";
+import { IProject } from "../api/projects/types";
 
 export const projectsMock: IProject[] = [
 	{

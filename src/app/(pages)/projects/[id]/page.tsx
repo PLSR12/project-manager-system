@@ -86,7 +86,11 @@ const ProjectDetails = () => {
 
 			<ul className="space-y-4">
 				{project.tasks.map((task) => (
-					<CardTask task={task} handleCompleteTask={handleCompleteTask} />
+					<CardTask
+						key={task.id}
+						task={task}
+						handleCompleteTask={handleCompleteTask}
+					/>
 				))}
 			</ul>
 
@@ -148,7 +152,7 @@ const ProjectDetails = () => {
 			<div className="mb-8 mt-4">
 				<ul className="space-y-4">
 					{project.comments.map((comment) => (
-						<CardComment comment={comment} />
+						<CardComment comment={comment} key={comment.id} />
 					))}
 				</ul>
 			</div>

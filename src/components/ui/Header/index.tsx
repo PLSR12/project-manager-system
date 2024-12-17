@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 
 const Header = () => {
 	const [showDropdown, setShowDropdown] = useState(false);
@@ -44,8 +45,8 @@ const Header = () => {
 					onClick={toggleDropdown}
 				>
 					{user?.image !== null && (
-						<img
-							src={user?.image}
+						<Image
+							src={user?.image ? user?.image : ""}
 							alt="Avatar"
 							className="w-full h-full object-cover"
 						/>

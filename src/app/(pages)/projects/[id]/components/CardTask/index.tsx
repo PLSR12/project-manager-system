@@ -3,13 +3,15 @@ import { ITask } from "@/src/app/api/projects/types";
 const CardTask = ({
 	task,
 	handleCompleteTask,
+	key,
 }: {
 	task: ITask;
 	handleCompleteTask: (id: string) => void;
+	key: string;
 }) => {
 	return (
 		<li
-			key={task.id}
+			key={key}
 			className="flex justify-between items-center p-4 bg-gray-50 rounded-lg shadow-sm border border-gray-200"
 		>
 			<span

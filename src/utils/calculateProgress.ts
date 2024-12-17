@@ -1,5 +1,4 @@
-import { IProject } from "../app/api/projects";
-import { ITask } from "../app/api/tasks";
+import { IProject, ITask } from "../app/api/projects/types";
 
 export const calculateProgress = (project: IProject) => {
 	const totalTasks = project.tasks?.length || 0;

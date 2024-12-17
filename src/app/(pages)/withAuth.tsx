@@ -1,12 +1,12 @@
+import Footer from "@/src/components/ui/Footer";
+import Header from "@/src/components/ui/Header";
+import NAVIGATION_CONSTANTS from "@/src/constants/navigation";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { useEffect, ReactNode, useMemo, useState } from "react";
-import Header from "../../components/ui/Header";
-import Footer from "../../components/ui/Footer";
-import NAVIGATION_CONSTANTS from "@/src/constants/navigation";
+import { useEffect, useState } from "react";
 
 const withAuth = (WrappedComponent: React.ComponentType) => {
-	return (props: any) => {
+	const WithAuthComponent = (props: any) => {
 		const router = useRouter();
 		const { data: session, status } = useSession();
 		const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(
@@ -39,11 +39,17 @@ const withAuth = (WrappedComponent: React.ComponentType) => {
 				<div className="mt-4 mb-4">
 					<WrappedComponent {...props} />
 				</div>
-
 				<Footer />
 			</>
 		);
 	};
+
+	// Definindo o displayName
+	const wrappedComponentName =
+		WrappedComponent.displayName || WrappedComponent.name || "Component";
+	WithAuthComponent.displayName = `withAuth(${wrappedComponentName})`;
+
+	return WithAuthComponent;
 };
 
 export default withAuth;
