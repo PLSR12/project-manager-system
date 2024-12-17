@@ -59,7 +59,7 @@ const ProjectDetails = () => {
 					Responsável: <strong>{project.responsible}</strong>
 				</p>
 				<p className="text-sm text-gray-500 mt-1">
-					Período: {dayjs(project.startDate).format("DD/MM/YYYY")} até{" "}
+					Período Estimado: {dayjs(project.startDate).format("DD/MM/YYYY")} até{" "}
 					{dayjs(project.endDate).format("DD/MM/YYYY")}
 				</p>
 				<p
