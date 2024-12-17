@@ -36,7 +36,7 @@ const withAuth = (WrappedComponent: React.ComponentType) => {
 		return (
 			<>
 				<Header />
-				<div className="mt-4 mb-4 h-full">
+				<div className="min-h-screen flex flex-col mt-4 mb-4">
 					<WrappedComponent {...props} />
 				</div>
 				<Footer />
@@ -44,7 +44,6 @@ const withAuth = (WrappedComponent: React.ComponentType) => {
 		);
 	};
 
-	// Definindo o displayName
 	const wrappedComponentName =
 		WrappedComponent.displayName || WrappedComponent.name || "Component";
 	WithAuthComponent.displayName = `withAuth(${wrappedComponentName})`;
