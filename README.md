@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-In the project directory, you can run:
+In the project directory for make download the dependencies used in the project, you can run:
 
 
 ```bash
@@ -11,7 +11,7 @@ npm install
 yarn install
 ```
 
-To download the dependencies used in the project .\
+\
 
 To run the development server:
 
