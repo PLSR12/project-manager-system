@@ -18,7 +18,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${inter.className} h-full`} // Adicionando a classe 'h-full' no body
+				className={`${inter.className} h-full`}
 				suppressHydrationWarning={true}
 			>
 				<DataContextProvider>

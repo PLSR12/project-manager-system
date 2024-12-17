@@ -36,7 +36,7 @@ const withAuth = (WrappedComponent: React.ComponentType) => {
 		return (
 			<>
 				<Header />
-				<div className="mt-4 mb-4">
+				<div className="mt-4 mb-4 h-full">
 					<WrappedComponent {...props} />
 				</div>
 				<Footer />
