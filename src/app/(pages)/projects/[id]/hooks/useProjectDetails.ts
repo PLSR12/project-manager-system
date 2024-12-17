@@ -1,17 +1,20 @@
 import { getProjects, updateProject } from "@/src/app/api/projects";
 import { IComment, IProject, ITask } from "@/src/app/api/projects/types";
 import { useParams, useRouter } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import {
 	IFormCommentInput,
 	IFormTaskTitleInput,
 	IUseProjectDetails,
 } from "./types";
+import { useSession } from "next-auth/react";
 
 export const useProjectDetails = (): IUseProjectDetails => {
 	const router = useRouter();
 	const { id } = useParams();
+	const { data: session } = useSession();
+	const user = useMemo(() => session?.user, [session]);
 	const [project, setProject] = useState<IProject | null>(null);
 	const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 	const {
@@ -80,7 +83,7 @@ export const useProjectDetails = (): IUseProjectDetails => {
 
 			const newCommentData: IComment = {
 				id: `c${Date.now()}`,
-				author: "Usuário Atual",
+				author: user?.name || "",
 				text: data.comment,
 				date: new Date().toISOString().split("T")[0],
 			};
