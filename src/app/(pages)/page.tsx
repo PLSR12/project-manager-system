@@ -64,12 +64,6 @@ const Home = () => {
 		],
 	};
 
-	useEffect(() => {
-		if (status === "authenticated" && session?.user) {
-			localStorage.setItem("user", JSON.stringify(session.user));
-		}
-	}, [session, status]);
-
 	return (
 		<div className="min-w-screen flex items-center justify-center bg-gray-100 p-4">
 			<div className="bg-white shadow-md rounded-lg p-6 max-w-4xl w-full">

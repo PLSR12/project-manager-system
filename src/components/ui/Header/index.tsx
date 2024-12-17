@@ -17,7 +17,6 @@ const Header = () => {
 	};
 
 	const handleLogout = () => {
-		localStorage.removeItem("user");
 		signOut();
 		router.push(NAVIGATION_CONSTANTS.LOGIN);
 	};
