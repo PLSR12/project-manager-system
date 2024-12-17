@@ -11,7 +11,6 @@ npm install
 yarn install
 ```
 
-\
 
 To run the development server:
 
