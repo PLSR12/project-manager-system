@@ -4,31 +4,24 @@ import { IProject } from "@/src/app/api/projects/types";
 import { calculateProgress } from "@/src/utils/calculateProgress";
 import Progress from "@/src/components/ui/Progress";
 
-export const defineColorStatus = (
-	status: "active" | "delayed" | "completed"
-) => {
+export const defineColorStatus = (status: "active" | "completed") => {
 	switch (status) {
 		case "active":
 			return "green-500";
 		case "completed":
 			return "blue-500";
-		case "delayed":
-			return "red-500";
+
 		default:
 			return "#000";
 	}
 };
 
-export const defineLabelStatus = (
-	status: "active" | "delayed" | "completed"
-) => {
+export const defineLabelStatus = (status: "active" | "completed") => {
 	switch (status) {
 		case "active":
 			return "Ativo";
 		case "completed":
 			return "Concluído";
-		case "delayed":
-			return "Atrasado";
 		default:
 			return status;
 	}

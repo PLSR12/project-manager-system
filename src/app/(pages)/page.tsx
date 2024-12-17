@@ -36,10 +36,6 @@ const Home = () => {
 		() => projects.filter((p) => p.status === "completed").length,
 		[projects]
 	);
-	const delayedProjects = useMemo(
-		() => projects.filter((p) => p.status === "delayed").length,
-		[projects]
-	);
 
 	const options = {
 		responsive: true,
@@ -64,11 +60,6 @@ const Home = () => {
 				label: "Projetos em Andamento",
 				data: [activeProjects],
 				backgroundColor: ["#2196f3"],
-			},
-			{
-				label: "Projetos Com Atrasos",
-				data: [delayedProjects],
-				backgroundColor: ["#f44336"],
 			},
 		],
 	};

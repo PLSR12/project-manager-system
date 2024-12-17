@@ -8,7 +8,7 @@ export interface IComment {
 export interface ITask {
 	id: string;
 	title: string;
-	status: "active" | "delayed" | "completed";
+	status: "active" | "completed";
 }
 
 export interface IProject {
@@ -17,7 +17,7 @@ export interface IProject {
 	description: string;
 	startDate: string;
 	endDate: string;
-	status: "active" | "delayed" | "completed";
+	status: "active" | "completed";
 	responsible: string;
 	tasks: ITask[];
 	comments: IComment[];

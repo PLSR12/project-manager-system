@@ -102,7 +102,7 @@ export const projectsMock: IProject[] = [
 			"Implementação de um sistema de automação de processos internos.",
 		startDate: "2024-05-01",
 		endDate: "2024-11-30",
-		status: "delayed",
+		status: "active",
 		responsible: "Eva",
 		tasks: [
 			{
