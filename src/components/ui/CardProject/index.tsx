@@ -7,12 +7,9 @@ import Progress from "@/src/components/ui/Progress";
 export const defineColorStatus = (status: "active" | "completed") => {
 	switch (status) {
 		case "active":
-			return "green-500";
+			return "text-green-500";
 		case "completed":
-			return "blue-500";
-
-		default:
-			return "#000";
+			return "text-blue-500";
 	}
 };
 
@@ -41,7 +38,7 @@ const CardProject = ({
 			<div>
 				<h3 className="text-lg font-medium">{project.name}</h3>
 				<p className="text-sm text-gray-600">{project.description}</p>
-				<p className={`text-sm mt-1 text-${defineColorStatus(project.status)}`}>
+				<p className={`text-sm mt-1 ${defineColorStatus(project.status)}`}>
 					Status: {defineLabelStatus(project.status)}
 				</p>
 
