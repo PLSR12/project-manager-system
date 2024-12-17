@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Button } from "@/src/components/ui/Button";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
@@ -33,8 +33,8 @@ const Projects = () => {
 	const { projects } = useDataProvider();
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	const openModal = () => setIsModalOpen(true);
-	const closeModal = () => setIsModalOpen(false);
+	const openModal = useCallback(() => setIsModalOpen(true), [setIsModalOpen]);
+	const closeModal = useCallback(() => setIsModalOpen(false), [setIsModalOpen]);
 
 	useEffect(() => {
 		if (status === "authenticated" && session?.user) {
