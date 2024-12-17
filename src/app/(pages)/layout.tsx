@@ -17,9 +17,13 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={inter.className} suppressHydrationWarning={true}>
+			<body
+				className={`${inter.className} h-full`} // Adicionando a classe 'h-full' no body
+				suppressHydrationWarning={true}
+			>
 				<DataContextProvider>
-					<div className="bg-gray-100">{children}</div>
+					<div className="bg-gray-100 h-full">{children}</div>{" "}
+					{/* Definindo a altura 100% */}
 				</DataContextProvider>
 			</body>
 		</html>
